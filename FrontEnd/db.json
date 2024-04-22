@@ -1,0 +1,64 @@
+{
+  "infraestrutura": [
+    {
+      "id": 1,
+      "nome": "Sala de Aula Teóricas",
+      "funcionais": 0,
+      "nao_funcionais": 0
+    },
+    {
+      "nome": "Laboratório de CNC",
+      "funcionais": 1,
+      "nao_funcionais": 2,
+      "id": 6
+    },
+    {
+      "nome": "Laboratório de Energia Renováveis",
+      "funcionais": 3,
+      "nao_funcionais": 8,
+      "id": 8
+    },
+    {
+      "id": 9,
+      "nome": "Laboratório de Física",
+      "funcionais": 0,
+      "nao_funcionais": 0
+    },
+    {
+      "id": 10,
+      "nome": "Laboratório de Frio e Climatização",
+      "funcionais": 0,
+      "nao_funcionais": 0
+    },
+    {
+      "id": 11,
+      "nome": "Laboratório de Instalação Eléctricas",
+      "funcionais": 0,
+      "nao_funcionais": 0
+    },
+    {
+      "nome": "Laboratório de Máquinas Eléctricas",
+      "funcionais": 6,
+      "nao_funcionais": 0,
+      "id": 12
+    },
+    {
+      "nome": "Laboratório de Metalomecânica",
+      "funcionais": 2,
+      "nao_funcionais": 1,
+      "id": 13
+    },
+    {
+      "id": 14,
+      "nome": "Laboratório de Química",
+      "funcionais": 0,
+      "nao_funcionais": 0
+    },
+    {
+      "nome": "teste1",
+      "funcionais": 12,
+      "nao_funcionais": 2,
+      "id": 15
+    }
+  ]
+}

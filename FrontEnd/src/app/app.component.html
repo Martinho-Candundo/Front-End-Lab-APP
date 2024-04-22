@@ -1,0 +1,106 @@
+<div class="container">
+  <div class="col-md-12">
+    <div class="text-center mg">
+      <h4>Instituto Politécnico - Lab App</h4>
+    </div>
+
+    <table class="table">
+      <thead class="cor-fundo-cabecalho">
+        <tr class="centralizar-elemento">
+          <th >Designação</th>
+          <th >Funcionais</th>
+          <th >Não Funcionais</th>
+          <th >Número total</th>
+          <th >Ações</th>
+        </tr>
+      </thead>
+      <tbody class="cor_body">
+        <ng-container *ngFor="let item of dadosApi; let i = index">
+          <tr scope="row">
+            <th>{{item.nome}}</th>
+            <td *ngIf="i === 0">
+              <input type="number" value="0" disabled>
+            </td>
+
+            <td *ngIf="i !== 0 && i>=0">
+              <input type="number" value="{{item.funcionais}}" (keypress)="validarNumero($event)" min="0">
+            </td>
+            <td *ngIf="i === 0">
+              <input type="number" value="0" disabled>
+
+            </td>
+            <td *ngIf="i !== 0">
+              <input type="number" value="{{item.nao_funcionais}}" (keypress)="validarNumero($event)" min="0">
+            </td>
+            <td><input type="number" value="{{(item.funcionais + item.nao_funcionais)}}" disabled (keypress)="validarNumero($event)"></td>
+            <td *ngIf="i === 0">
+              <button type="button" class="btn cor-buton mr-10" disabled>
+                Actualizar
+              </button>
+            </td>
+            <td *ngIf="i !== 0" class="d-flex">
+              <button type="button" class="btn cor-buton mr-10" (click)="setItem(item)" data-toggle="modal" data-target="#exampleModal">
+                Actualizar
+              </button>
+              <!-- <button type="button" class="btn btn cor-btn-danger" (click)="deleteItem(item.id)">
+                delete
+              </button> -->
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+
+    </table>
+    <!-- Button trigger modal -->
+
+      <button type="button" class="btn cor-btn" data-toggle="modal" data-target="#exampleModal">
+         Cadastrar
+      </button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Cadastrar/Atualizar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form  [formGroup]="meuFormulario" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="nome">Sala:</label>
+            <input type="text" class="form-control" id="nome" name="nome"  formControlName="nome"  required >
+          </div>
+          <div class="form-group">
+            <label for="nome">Funcionais:</label>
+            <input type="number" class="form-control"  id="funcionais" name="funcionais"  formControlName="funcionais" (keypress)="validarNumero($event)" min="0" required>
+            <div *ngIf="meuFormulario.get('funcionais')?.invalid && (meuFormulario.get('funcionais')?.dirty || meuFormulario.get('funcionais')?.touched)" class="alert alert-danger">
+              <div *ngIf="meuFormulario.get('funcionais')?.errors?.['required']">Quantidade de funcionais é obrigatória.</div>
+              <div *ngIf="meuFormulario.get('funcionais')?.errors?.['min']">Quantidade de funcionais deve ser maior ou igual a zero.</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="nome">Não Funcionais:</label>
+            <input type="number" class="form-control" id="nao_funcionais" name="nao_funcionais" formControlName="nao_funcionais" (keypress)="validarNumero($event)" min="0" required>
+            <div *ngIf="meuFormulario.get('nao_funcionais')?.invalid && (meuFormulario.get('nao_funcionais')?.dirty || meuFormulario.get('nao_funcionais')?.touched)" class="alert alert-danger">
+              <div *ngIf="meuFormulario.get('nao_funcionais')?.errors?.['required']">Quantidade de não funcionais é obrigatória.</div>
+              <div *ngIf="meuFormulario.get('nao_funcionais')?.errors?.['min']">Quantidade de não funcionais deve ser maior ou igual a zero.</div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">Close</button>
+            <button type="submit" class="btn btn-primary">Save</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+
+
+

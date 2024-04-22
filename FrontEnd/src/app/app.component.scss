@@ -1,0 +1,56 @@
+//Cabeçalho Table
+.mg{
+  margin: 20px;
+}
+.cor-fundo-cabecalho{
+  background-color: #c4c4c4;
+  width: 983px;
+  height: 62px;
+  top: -1261px;
+  left: -523px;
+
+}
+.cor-buton{
+  background-color: #2b6ab5;
+  color: #ffffff;
+  margin-bottom: 1px;
+  height: 30px;
+  padding-top: 0px;
+}
+
+.centralizar-elemento th{
+  vertical-align: middle;
+  border-bottom: 2px solid #dee2e6;
+}
+.cor-btn{
+  background-color: #2b6ab5;
+  // width: 263px;
+  // height: 68px;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 22px;
+  float: right;
+  margin-bottom: 30px;
+}
+.cor_body{
+  background-color: #eaeaea;
+}
+.table td, .table th {
+  padding: .75rem;
+  vertical-align: top;
+  border-top: 1px solid #999999;
+}
+
+.cor-btn-yellow{
+  background-color: #d7c539;
+}
+.cor-btn-danger{
+  background-color: #d75939;
+}
+.d-flex{
+  display: flex;
+}
+
+.mr-10{
+  margin-right: 10px;
+}
